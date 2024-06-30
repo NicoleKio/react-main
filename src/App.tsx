@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {FC} from 'react';
 import './App.css';
+import {people} from "./data";
+import {ICharacter} from "./Models/ICharacter";
+import Character from "./Components/Character";
 
-const App=()=> {
 
 
+const App: FC = () => {
   return (
-    <div></div>
+      <div>
+          {
+              people.map((character:ICharacter)=>
+                <Character character={character}>{character.relatives}</Character>
+
+              )
+          }
+      </div>
   );
 }
 
